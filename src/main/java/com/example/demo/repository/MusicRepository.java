@@ -30,7 +30,7 @@ public class MusicRepository {
         musicMapper.updateMusic(music);
     }
     //あいう
-    
+    //かきく
 
     public Music selectMusicById(long musicId){
         return musicMapper.selectMusicById(musicId);
