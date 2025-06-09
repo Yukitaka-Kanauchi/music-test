@@ -29,9 +29,7 @@ public class MusicRepository {
     public void updateMusic(Music music){
         musicMapper.updateMusic(music);
     }
-    //あいう
-    //かきく
-
+    
     public Music selectMusicById(long musicId){
         return musicMapper.selectMusicById(musicId);
     }
