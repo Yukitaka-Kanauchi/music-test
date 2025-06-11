@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>料理提案</title>
+    <style>
+        body {
+            background: #fdf0c8;
+            margin: 0;
+            font-family: 'Meiryo', sans-serif;
+        }
+        .title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #999;
+            margin-top: 40px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 2rem;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+        .genre-area {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 80px;
+            margin-bottom: 40px;
+        }
+        .genre-block {
+            text-align: center;
+        }
+        .genre-label {
+            font-size: 1.7rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .genre-btn {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border-radius: 20px;
+            padding: 10px;
+        }
+        .genre-btn img {
+            width: 180px;
+            height: auto;
+            transition: transform 0.2s;
+            display: block;
+        }
+        .genre-btn:hover, .genre-btn:focus {
+            transform: scale(1.10);
+            background: #fffbe6;
+        }
+        .genre-btn:hover img, .genre-btn:focus img {
+            transform: scale(1.08);
+        }
+        .back-btn {
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            font-size: 2rem;
+            background: #bbb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 24px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #888;
+        }
+        @media (max-width: 900px) {
+            .genre-area {
+                flex-direction: column;
+                gap: 40px;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">料理提案</div>
+    <div class="subtitle">お召し上がりになりたいジャンルをお選びください</div>
+    <div class="genre-area">
+        <div class="genre-block">
+            <div class="genre-label">和食</div>
+            <button class="genre-btn" aria-label="和食" onclick="location.href='japan.html'">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnX-maVnstIKmTcWpAwpO-jCbD5ozcpNyDjbt-8yaDLMIxzcJ5W6G6Rn2n8Z8_xr6QYIQ7oJsfcb095xQommc9bmnB4F8knAJ9xUSKaeDjCQS1G97HqZPL8QVp-DPm0VRHx9cRwC74FLA/s400/bousai_nikujaga.png" alt="和食">
+            </button>
+        </div>
+        <div class="genre-block">
+            <div class="genre-label">洋食</div>
+            <button class="genre-btn" aria-label="洋食" onclick="location.href='Western.html'">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3gLY0WdSLizyaRtsYdzQEaW_cyfzARgrXx6HqQfpzPP9LdvIHZltREA9CFICtHgKgkyET8hfeMCrp4L2oORcrwxM75LzQt3Enjvm6JY9klwu_1DpIO4FOJ0eTqyGJWIyJU8dRP_VzfpWM/s450/food_spaghetti_bolognese_meatsauce.png" alt="洋食">
+            </button>
+        </div>
+        <div class="genre-block">
+            <div class="genre-label">中華</div>
+            <button class="genre-btn" aria-label="中華" onclick="location.href='china.html'">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgEnSqN0gYA1O4zZ_ww2_avUG0EIsCCQtCt1_4hLRzsQRVRAgHDL6CsM3HyRwFV6D4t8tlZjPhZF58OLI0Avy8_04_Q2Sy6kYBlkH86CSpHxsK1Ql71DS9gxIaT-oHss0_Sv2nyXsnhsvB/s450/food_chuukadon.png" alt="中華">
+            </button>
+        </div>
+    </div>
+    <button class="back-btn" onclick="location.href='first.html'">戻る</button>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>和食</title>
+    <style>
+        body {
+            background: #fdf0c8;
+            margin: 0;
+            font-family: 'Meiryo', sans-serif;
+        }
+        .title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #999;
+            margin-top: 60px;
+        }
+        .back-btn {
+            position: absolute;
+            left: 40px;
+            bottom: 40px;
+            font-size: 2rem;
+            background: #bbb;
+            color: #fff;
+            border: 1px solid #888;
+            border-radius: 4px;
+            padding: 6px 28px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #888;
+        }
+        .reload-btn {
+            position: absolute;
+            right: 40px;
+            bottom: 40px;
+            font-size: 2rem;
+            background: orange;
+            color: #fff;
+            border: 1px solid #b97b00;
+            border-radius: 4px;
+            padding: 6px 28px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .reload-btn:hover {
+            background: #ffb300;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">和食</div>
+    <button class="back-btn" onclick="location.href='suggest.html'">戻る</button>
+    <button class="reload-btn" onclick="location.reload()">もう１回</button>
+</body>
+</html>

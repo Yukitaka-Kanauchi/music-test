@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Bootstrap読み込み -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <title>KitchenKeeper</title>
+    <style>
+        body {
+            background: #fdf0c8;
+        }
+        .main-title {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: bold;
+            color: #999;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+        .menu-btn {
+            background: none;
+            border: none;
+            outline: none;
+            transition: transform 0.2s;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 0 auto;
+            display: block;
+        }
+        .menu-btn img {
+            transition: transform 0.2s;
+            display: block;
+        }
+        /* 料理提案画像を小さく */
+        .menu-block:first-child .menu-btn img {
+            width: 140px;
+            height: auto;
+        }
+        /* 食材管理画像を大きく */
+        .menu-block:last-child .menu-btn img {
+            width: 260px;
+            height: auto;
+        }
+        .menu-btn:hover, .menu-btn:focus {
+            transform: scale(1.12);
+            background: #fffbe6;
+        }
+        .menu-btn:hover img, .menu-btn:focus img {
+            transform: scale(1.08);
+        }
+        .menu-area {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10vw;
+            margin-top: 40px;
+        }
+        .menu-block {
+            flex: 1 1 0;
+            text-align: center;
+        }
+        @media (max-width: 900px) {
+            .menu-area {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-title">KitchenKeeper</div>
+    <div class="menu-area">
+        <div class="menu-block">
+            <div class="section-title">料理提案</div>
+            <a href="suggest.html">
+                <button class="menu-btn" aria-label="料理提案">
+                    <img src="https://soco-st.com/wp-content/themes/socost/upload/20515_color.png" alt="料理提案">
+                </button>
+            </a>
+        </div>
+        <div class="menu-block">
+            <div class="section-title">食材管理</div>
+            <button class="menu-btn" aria-label="食材管理" onclick="location.href='manage.html'">
+                <img src="https://soco-st.com/wp-content/themes/socost/upload/22414_color.png" alt="食材管理">
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
