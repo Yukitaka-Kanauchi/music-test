@@ -33,7 +33,15 @@ public class AlbumController {
     public String albums(Model model){
         List<Album> albums = albumService.getAllAlbums();
         model.addAttribute("albums", albums);
+        //return "album/album-list";
+        return "album/album-first";
+    }
+     @GetMapping("/list")
+    public String albumlist(Model model){
+        List<Album> albumstest = albumService.getAllAlbums();
+        model.addAttribute("albums", albumstest);
         return "album/album-list";
+        //return "album/album-first";
     }
 
     @GetMapping("/new")
@@ -52,6 +60,11 @@ public class AlbumController {
      */
     @PostMapping("/new")
     public String createAlbum(AlbumForm albumForm) {
+        albumService.createAlbum(albumForm);
+        return "redirect:/albums";
+    }
+    @PostMapping("/list")
+    public String createAlbumtest(AlbumForm albumForm) {
         albumService.createAlbum(albumForm);
         return "redirect:/albums";
     }
