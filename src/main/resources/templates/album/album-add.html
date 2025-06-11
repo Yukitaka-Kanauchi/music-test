@@ -21,8 +21,22 @@
 <body>
     <h1>KichenKeeper</h1>
     <p>食材追加</p>
-    <form th:action="@{/albums/list}" method="get">
-                <button type="submit">決定</button>
+
+    <form th:action="@{/albums/add}" th:object="${albumForm}" method="post">
+    <div>
+        <label for="title">食材名：</label>
+        <input type="text" id="title" name="title" th:field="*{title}">
+    </div>
+    <div>
+        <label for="artist">分量：</label>
+        <input type="text" id="artist" name="artist" th:field="*{artist}">
+    </div>
+    <div>
+        <label for="release-date">消費期限：</label>
+        <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}">
+    </div>
+    <button type="submit">決定</button>
     </form>
+    
 </body>
 </html>
