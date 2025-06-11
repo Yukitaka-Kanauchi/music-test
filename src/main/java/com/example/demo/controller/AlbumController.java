@@ -50,6 +50,12 @@ public class AlbumController {
         model.addAttribute("albumForm", albumForm);
         return "album/album-form";
     }
+     @GetMapping("/add")
+    public String albumadd(Model model){
+        List<Album> albumstest = albumService.getAllAlbums();
+        model.addAttribute("albums", albumstest);
+        return "album/album-add";
+    }
     /*
     @PostMapping("/new")
     public String createAlbum(AlbumForm albumForm, Model model) {
