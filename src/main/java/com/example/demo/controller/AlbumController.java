@@ -34,14 +34,16 @@ public class AlbumController {
         List<Album> albums = albumService.getAllAlbums();
         model.addAttribute("albums", albums);
         //return "album/album-list";
-        return "album/album-first";
+        //return "album/album-first";
+        return "menu/first";
     }
     @GetMapping("/list")
     public String albumlist(Model model){
         List<Album> albumstest = albumService.getAllAlbums();
         model.addAttribute("albums", albumstest);
-        return "album/album-list";
+        //return "album/album-list";
         //return "album/album-first";
+        return "menu/manage";
     }
 
     @GetMapping("/new")
