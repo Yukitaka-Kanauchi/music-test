@@ -32,6 +32,23 @@
         .back-btn:hover {
             background: #888;
         }
+        .add-btn {
+            position: absolute;
+            right: 40px;
+            bottom: 40px;
+            font-size: 2rem;
+            background: #c6ffd6;
+            color: #333;
+            border: 1px solid #aee5b8;
+            border-radius: 4px;
+            padding: 6px 28px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .add-btn:hover {
+            background: #a8e6bb;
+            color: #222;
+        }
         .farmer-img {
             position: absolute;
             right: 48px;
@@ -52,6 +69,12 @@
             .back-btn {
                 left: 20px;
             }
+            .add-btn {
+                right: 20px;
+                bottom: 20px;
+                font-size: 1.3rem;
+                padding: 4px 16px;
+            }
             .title {
                 font-size: 2rem;
                 margin-top: 24px;
@@ -61,9 +84,10 @@
 </head>
 <body>
     <div class="title">食材追加</div>
-    <a href="first.html">
+    <a href="manage.html">
         <button class="back-btn" type="button">戻る</button>
     </a>
+    <button class="add-btn" type="button">決定</button>
     <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
 </body>
 </html>
