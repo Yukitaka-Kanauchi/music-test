@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>食材追加</title>
+    <style>
+        body {
+            background: #fdf0c8;
+            margin: 0;
+            font-family: 'Meiryo', sans-serif;
+        }
+        .title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #999;
+            margin-top: 40px;
+        }
+        .back-btn {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            font-size: 2rem;
+            background: #bbb;
+            color: #fff;
+            border: 1px solid #888;
+            border-radius: 4px;
+            padding: 6px 28px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #888;
+        }
+        .add-btn {
+            position: absolute;
+            right: 40px;
+            bottom: 40px;
+            font-size: 2rem;
+            background: #c6ffd6;
+            color: #333;
+            border: 1px solid #aee5b8;
+            border-radius: 4px;
+            padding: 6px 28px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .add-btn:hover {
+            background: #a8e6bb;
+            color: #222;
+        }
+        .farmer-img {
+            position: absolute;
+            right: 48px;
+            bottom: 105px;
+            width: 100px;
+            height: auto;
+        }
+        @media (max-width: 900px) {
+            .farmer-img {
+                right: 20px;
+                width: 120px;
+            }
+            .back-btn {
+                bottom: 20px;
+                font-size: 1.3rem;
+                padding: 4px 16px;
+            }
+            .back-btn {
+                left: 20px;
+            }
+            .add-btn {
+                right: 20px;
+                bottom: 20px;
+                font-size: 1.3rem;
+                padding: 4px 16px;
+            }
+            .title {
+                font-size: 2rem;
+                margin-top: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">食材追加</div>
+    <a href="manage.html">
+        <button class="back-btn" type="button">戻る</button>
+    </a>
+    <button class="add-btn" type="button">決定</button>
+    <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
+</body>
+</html>
