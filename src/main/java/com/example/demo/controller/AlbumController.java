@@ -95,7 +95,7 @@ public class AlbumController {
     @PostMapping("/{albumId}/delete")
     public String deleteAlbum(@PathVariable long albumId) {
         albumService.deleteAlbum(albumId);
-        return "redirect:/albums";
+        return "redirect:/albums/list";
     }
 
     @GetMapping("/{albumId}/edit")
