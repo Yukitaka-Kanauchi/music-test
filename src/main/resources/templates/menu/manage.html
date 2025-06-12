@@ -57,9 +57,41 @@
         }
     </style>
 </head>
-<body>
+<!--<body>
     <div class="title">食材管理</div>
-    <button class="back-btn" onclick="location.href='first.html'">戻る</button>
     <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
+</body>-->
+<body>
+    <!--<div th:replace = "~{layout :: header}"></div>-->
+    <div class="title">食材管理</div>
+    <h3>食材管理</h3>
+    <table>
+        <thead>
+                <th>食材名</th>
+                <th>分量</th>
+                <th>消費期限</th>
+        </thead>
+        <tbody>
+            <tr th:each = "album : ${albums}">
+                <td><span th:text = "${album.title}">album title</span></td>
+                <td><span th:text = "${album.artist}">album artist</span></td>
+                <td><span th:text = "${album.releaseDate}">album releaseDate</span></td>
+                <td>
+                <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post">
+                    <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
+                </form>
+            </td>
+            </tr>
+        </tbody>
+        <div th:repalce = "~{layout :: footer}"></div>
+    </table>
+
+    <form th:action="@{/albums}" method="get">
+        <button class="back-btn" >戻る</button>
+    </form>
+    <form th:action="@{/albums/add}" method="get">
+        <button type="submit">追加</button>
+        <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
+    </form>
 </body>
 </html>
