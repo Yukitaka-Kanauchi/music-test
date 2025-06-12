@@ -38,7 +38,7 @@
 
             <tr th:each = "album : ${albums}">
                 <!--<td><span th:text = "${album.albumId}">album id</span></td>-->
-                <td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.title}">album title</span></a></td>
+                <!--<td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.title}">album title</span></a></td>-->
                 <td><span th:text = "${album.title}">album title</span></td>
                 <td><span th:text = "${album.artist}">album artist</span></td>
                 <td><span th:text = "${album.releaseDate}">album releaseDate</span></td>
@@ -47,6 +47,9 @@
                     <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
                 </form>
             -->
+                <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post">
+                    <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
+                </form>
             </td>
             </tr>
 
