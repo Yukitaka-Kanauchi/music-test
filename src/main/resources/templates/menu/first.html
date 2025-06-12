@@ -79,10 +79,12 @@
     <div class="menu-area">
         <div class="menu-block">
             <div class="section-title">料理提案</div>
-            <a href="suggest.html">
+            <!--<a href="suggest.html">-->
+                <form th:action="@{/albums/suggest}" method="get">
                 <button class="menu-btn" aria-label="料理提案">
                     <img src="https://soco-st.com/wp-content/themes/socost/upload/20515_color.png" alt="料理提案">
                 </button>
+                </form>
             </a>
         </div>
         <div class="menu-block">
