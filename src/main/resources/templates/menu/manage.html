@@ -108,7 +108,6 @@
     </style>
 </head>
     <div class="title">食材管理</div>
-    <h3 style="text-align:center;">食材管理</h3>
     <div class="table-area">
         <table>
             <thead>
@@ -119,28 +118,29 @@
                     <th>操作</th>
                 </tr>
             </thead>
-            <tbody>
+            <body>
                 <tr th:each="album : ${albums}">
-                    <td><span th:text="${album.title}">鶏肉</span></td>
-                    <td><span th:text="${album.artist}">100g</span></td>
-                    <td><span th:text="${album.releaseDate}">6/12</span></td>
+                    <td><span th:text="${album.title}">album title</span></td>
+                    <td><span th:text="${album.artist}">album artist</span></td>
+                    <td><span th:text="${album.releaseDate}">album </span></td>
                     <td>
                         <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post" style="margin:0;">
                             <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
                         </form>
                     </td>
                 </tr>
-            </tbody>
+            </body>
         </table>
     </div>
     <div th:repalce="~{layout :: footer}"></div>
 
-    <a href="first.html">
-        <button class="back-btn" type="button">戻る</button>
-    </a>
-    <a href="add.html">
-        <button class="add-btn" type="button">追加</button>
-    </a>
+    <form th:action="@{/albums}" method="get">
+        <button class="back-btn">戻る</button>
+    </form>
+
+    <form th:action="@{/albums/add}" method="get">
+        <button class="add-btn">追加</button>
+    </form>
     <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
 </body>
 </html>
