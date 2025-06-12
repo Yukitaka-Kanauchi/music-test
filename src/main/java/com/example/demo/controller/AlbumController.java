@@ -46,6 +46,15 @@ public class AlbumController {
         return "menu/manage";
     }
 
+    @GetMapping("/suggest")
+    public String disheslist(Model model){
+        List<Album> disheslist = albumService.getAllAlbums();
+        model.addAttribute("albums", disheslist);
+        //return "album/album-list";
+        //return "album/album-first";
+        return "menu/suggest";
+    }
+
     @GetMapping("/new")
     public String albumForm(Model model) {
         AlbumForm albumForm = new AlbumForm();
