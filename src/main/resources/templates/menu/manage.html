@@ -16,9 +16,39 @@
             color: #999;
             margin-top: 40px;
         }
-        .back-btn {
+        .table-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            background: #fff;
+            min-width: 600px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        th, td {
+            border: 1px solid #fff;
+            padding: 14px 24px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        th {
+            background: #ffb300; 
+            color: #fff;
+            font-weight: bold;
+        }
+        tr:nth-child(even) td {
+            background: #fff6ec; 
+        }
+        tr:nth-child(odd) td {
+            background: #fffbe6; 
+        }
+        .back-btn, .add-btn {
             position: absolute;
-            left: 40px;
             bottom: 40px;
             font-size: 2rem;
             background: #bbb;
@@ -29,13 +59,25 @@
             cursor: pointer;
             transition: background 0.2s;
         }
-        .back-btn:hover {
+        .back-btn {
+            left: 40px;
+        }
+        .add-btn {
+            right: 40px;
+            background: #c6ffd6;
+            color: #333;
+        }
+        .back-btn:hover, .add-btn:hover {
             background: #888;
+        }
+        .add-btn:hover {
+            background: #a8e6bb;
+            color: #222;
         }
         .farmer-img {
             position: absolute;
-            right: 80px;
-            bottom: 40px;
+            right: 48px;
+            bottom: 105px;
             width: 100px;
             height: auto;
         }
@@ -44,54 +86,61 @@
                 right: 20px;
                 width: 120px;
             }
-            .back-btn {
-                left: 20px;
+            .back-btn, .add-btn {
                 bottom: 20px;
                 font-size: 1.3rem;
                 padding: 4px 16px;
+            }
+            .back-btn {
+                left: 20px;
+            }
+            .add-btn {
+                right: 20px;
             }
             .title {
                 font-size: 2rem;
                 margin-top: 24px;
             }
+            table {
+                min-width: 90vw;
+            }
         }
     </style>
 </head>
-<!--<body>
     <div class="title">食材管理</div>
-    <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
-</body>-->
-<body>
-    <!--<div th:replace = "~{layout :: header}"></div>-->
-    <div class="title">食材管理</div>
-    <h3>食材管理</h3>
-    <table>
-        <thead>
-                <th>食材名</th>
-                <th>分量</th>
-                <th>消費期限</th>
-        </thead>
-        <tbody>
-            <tr th:each = "album : ${albums}">
-                <td><span th:text = "${album.title}">album title</span></td>
-                <td><span th:text = "${album.artist}">album artist</span></td>
-                <td><span th:text = "${album.releaseDate}">album releaseDate</span></td>
-                <td>
-                <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post">
-                    <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
-                </form>
-            </td>
-            </tr>
-        </tbody>
-        <div th:repalce = "~{layout :: footer}"></div>
-    </table>
+    <h3 style="text-align:center;">食材管理</h3>
+    <div class="table-area">
+        <table>
+            <thead>
+                <tr>
+                    <th>食材名</th>
+                    <th>分量</th>
+                    <th>消費期限</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="album : ${albums}">
+                    <td><span th:text="${album.title}">鶏肉</span></td>
+                    <td><span th:text="${album.artist}">100g</span></td>
+                    <td><span th:text="${album.releaseDate}">6/12</span></td>
+                    <td>
+                        <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post" style="margin:0;">
+                            <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:repalce="~{layout :: footer}"></div>
 
-    <form th:action="@{/albums}" method="get">
-        <button class="back-btn" >戻る</button>
-    </form>
-    <form th:action="@{/albums/add}" method="get">
-        <button type="submit">追加</button>
-        <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
-    </form>
+    <a href="first.html">
+        <button class="back-btn" type="button">戻る</button>
+    </a>
+    <a href="add.html">
+        <button class="add-btn" type="button">追加</button>
+    </a>
+    <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
 </body>
 </html>
