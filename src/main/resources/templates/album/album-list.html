@@ -3,19 +3,24 @@
 <head th:replace = "~{layout :: head(アルバム一覧)}"></head>
 <body>
     <div th:replace = "~{layout :: header}"></div>
-    <h3>アルバム一覧</h3>
+    <h3>食材管理</h3>
     <table>
         <thead>
-            <tr>
-                <tr>ID</tr>
-                <tr>タイトル</tr>
-                <tr>アーティスト</tr>
+            <!--<tr>
+                <th>ID</th>
+                <th>タイトル</th>
+                <th>アーティスト</th>
                 <th>リリース日</th>
                 <th></th>
-            </tr>
+            </tr>-->
+
+                <th>食材名</th>
+                <th>分量</th>
+                <th>消費期限</th>
+                <!--<th></th>-->
         </thead>
         <tbody>
-            <tr th:each = "album : ${albums}">
+            <!--<tr th:each = "album : ${albums}">
                 <td><span th:text = "${album.albumId}">album id</span></td>
                 <td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.title}">album title</span></a></td>
                 <td><span th:text = "${album.title}">album title</span></td>
@@ -29,7 +34,29 @@
                     <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
                 </form>
             </td>
+            </tr>-->
+
+            <tr th:each = "album : ${albums}">
+                <!--<td><span th:text = "${album.albumId}">album id</span></td>-->
+                <td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.title}">album title</span></a></td>
+                <td><span th:text = "${album.title}">album title</span></td>
+                <td><span th:text = "${album.artist}">album artist</span></td>
+                <td><span th:text = "${album.releaseDate}">album releaseDate</span></td>
+                <td>
+                <!--<form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post">
+                    <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
+                </form>
+            -->
+            </td>
             </tr>
+
+            <form th:action="@{/albums/add}" method="get">
+                <button type="submit">追加</button>
+            </form>
+            <form th:action="@{/albums}" method="get">
+                <button type="submit">戻る</button>
+            </form>
+
         </tbody>
         <div th:repalce = "~{layout :: footer}"></div>
     </table>
