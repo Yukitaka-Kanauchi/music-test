@@ -89,10 +89,11 @@
         </div>
         <div class="menu-block">
             <div class="section-title">食材管理</div>
-            <a href="manage.html">
-                <button class="menu-btn" aria-label="食材管理" type="button">
+            <form th:action="@{/albums/list}" method="get">
+                <button class="menu-btn" aria-label="食材管理">
                     <img src="https://soco-st.com/wp-content/themes/socost/upload/22414_color.png" alt="食材管理">
                 </button>
+            </form>
             </a>
         </div>
     </div>
