@@ -13,7 +13,9 @@ import org.apache.ibatis.annotations.Delete;
 
 @Mapper
 public interface AlbumMapper {
-    @Select("SELECT title FROM wa ORDER BY RANDOM()")
+    //@Select("SELECT title FROM wa ORDER BY RANDOM()")
+    //List<Album> selectAllAlbums();
+    @Select("SELECT * FROM albums")
     List<Album> selectAllAlbums();
 
     @Insert("INSERT INTO albums (title, artist, release_date) VALUES (#{title}, #{artist}, #{releaseDate})")
