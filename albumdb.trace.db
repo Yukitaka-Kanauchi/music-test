@@ -947,6 +947,7 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/De
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 100 more
 <<<<<<< HEAD
+<<<<<<< HEAD
 2025-06-12 14:08:24.309237+09:00 database: flush
 org.h2.message.DbException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/新しいフォルダー/music-test/albumdb.mv.db [2.3.232/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/新しいフォルダー/music-test/albumdb.mv.db [2.3.232/7]" [50000-232]
@@ -1060,6 +1061,11 @@ The connection was not closed by the application and is garbage collected [90018
 org.h2.message.DbException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/music-test/albumdb.mv.db [2.3.232/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/music-test/albumdb.mv.db [2.3.232/7]" [50000-232]
 >>>>>>> Day1_Kojima
+=======
+2025-06-13 14:20:04.844597+09:00 database: flush
+org.h2.message.DbException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]" [50000-232]
+>>>>>>> Day1_Nakayama
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:407)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
@@ -1164,6 +1170,7 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/us
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351)
 	at com.example.demo.DemoApplication.main(DemoApplication.java:10)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
@@ -1184,12 +1191,24 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/us
 	... 106 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Downloads/music-test/albumdb.mv.db [2.3.232/7]
 >>>>>>> Day1_Kojima
+=======
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 106 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]
+>>>>>>> Day1_Nakayama
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
 	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 100 more
+<<<<<<< HEAD
 <<<<<<< HEAD
 2025-06-13 11:44:25.349760+09:00 database: flush
 org.h2.message.DbException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/新しいフォルダー/music-test/albumdb.mv.db [2.3.232/7]"
@@ -1346,3 +1365,5 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/De
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
 >>>>>>> Day1_Kojima
+=======
+>>>>>>> Day1_Nakayama
