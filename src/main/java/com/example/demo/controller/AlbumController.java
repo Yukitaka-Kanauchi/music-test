@@ -94,6 +94,7 @@ public class AlbumController {
         return "redirect:/albums";
     }
 
+    //aaa
     @GetMapping("/{albumId}")
     public String album(@PathVariable long albumId, Model model) {
         Album album = albumService.getAlbumById(albumId);
