@@ -55,6 +55,27 @@ public class AlbumController {
         return "menu/suggest";
     }
 
+    @GetMapping("/japanese_food")
+    public String japaneseFoodlist(Model model){
+        List<Album> japaneseFood = albumService.getAllAlbums();
+        model.addAttribute("albums", japaneseFood);
+        return "menu/japan";
+    }
+
+    @GetMapping("/chinese_food")
+    public String chineseFoodlist(Model model){
+        List<Album> chineseFood = albumService.getAllAlbums();
+        model.addAttribute("albums", chineseFood);
+        return "menu/china";
+    }
+
+    @GetMapping("/western_food")
+    public String westernFoodlist(Model model){
+        List<Album> westernFood = albumService.getAllAlbums();
+        model.addAttribute("albums", westernFood);
+        return "menu/Western";
+    }
+
     @GetMapping("/new")
     public String albumForm(Model model) {
         AlbumForm albumForm = new AlbumForm();
@@ -94,6 +115,7 @@ public class AlbumController {
         return "redirect:/albums/list";
     }
 
+    //aaa
     @GetMapping("/{albumId}")
     public String album(@PathVariable long albumId, Model model) {
         Album album = albumService.getAlbumById(albumId);
