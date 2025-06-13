@@ -22,7 +22,7 @@
     <h1>KichenKeeper</h1>
     <p>食材追加</p>
 
-    <form th:action="@{/albums/add}" th:object="${albumForm}" method="post">
+    <!--<form th:action="@{/albums/add}" th:object="${albumForm}" method="post">-->
     <div>
         <label for="title">食材名：</label>
         <input type="text" id="title" name="title" th:field="*{title}">

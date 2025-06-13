@@ -1,5 +1,5 @@
 package com.example.demo.entity;
-
+//コメント
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;

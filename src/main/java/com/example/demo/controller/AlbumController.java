@@ -11,7 +11,7 @@ import java.util.List;
 
 import com.example.demo.form.AlbumForm;
 import org.springframework.web.bind.annotation.PostMapping;
-
+//giglgiggliu
 import com.example.demo.entity.Music;
 import com.example.demo.service.MusicService;
 
@@ -55,6 +55,27 @@ public class AlbumController {
         return "menu/suggest";
     }
 
+    @GetMapping("/japanese_food")
+    public String japaneseFoodlist(Model model){
+        List<Album> japaneseFood = albumService.getAllAlbums();
+        model.addAttribute("albums", japaneseFood);
+        return "menu/japan";
+    }
+
+    @GetMapping("/chinese_food")
+    public String chineseFoodlist(Model model){
+        List<Album> chineseFood = albumService.getAllAlbums();
+        model.addAttribute("albums", chineseFood);
+        return "menu/china";
+    }
+
+    @GetMapping("/western_food")
+    public String westernFoodlist(Model model){
+        List<Album> westernFood = albumService.getAllAlbums();
+        model.addAttribute("albums", westernFood);
+        return "menu/Western";
+    }
+
     @GetMapping("/new")
     public String albumForm(Model model) {
         AlbumForm albumForm = new AlbumForm();
@@ -66,7 +87,7 @@ public class AlbumController {
     public String albumadd(Model model){
         AlbumForm albumForm_2 = new AlbumForm();
         model.addAttribute("albumForm", albumForm_2);
-        return "album/album-add";
+        return "menu/add";
     }
 
     @PostMapping("/add")
@@ -91,9 +112,10 @@ public class AlbumController {
     @PostMapping("/list")
     public String createAlbumtest(AlbumForm albumForm) {
         albumService.createAlbum(albumForm);
-        return "redirect:/albums";
+        return "redirect:/albums/list";
     }
 
+    //aaa
     @GetMapping("/{albumId}")
     public String album(@PathVariable long albumId, Model model) {
         Album album = albumService.getAlbumById(albumId);

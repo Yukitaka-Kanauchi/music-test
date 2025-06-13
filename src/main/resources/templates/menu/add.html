@@ -37,16 +37,16 @@
             right: 40px;
             bottom: 40px;
             font-size: 2rem;
-            background: #c6ffd6;
-            color: #333;
-            border: 1px solid #aee5b8;
+            background: #ffb300; 
+            color: #ffffff;
+            border: 1px solid #ffb300; 
             border-radius: 4px;
             padding: 6px 28px;
             cursor: pointer;
             transition: background 0.2s;
         }
         .add-btn:hover {
-            background: #a8e6bb;
+            background: #e6d9a8;
             color: #222;
         }
         .farmer-img {
@@ -55,6 +55,70 @@
             bottom: 105px;
             width: 100px;
             height: auto;
+        }
+        .table-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            background: #fff;
+            min-width: 600px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        th, td {
+            border: 1px solid #fff;
+            padding: 14px 24px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        th {
+            background: #ffb300; 
+            color: #fff;
+            font-weight: bold;
+        }
+        tr:nth-child(even) td {
+            background: #fff6ec; 
+        }
+        tr:nth-child(odd) td {
+            background: #fffbe6; 
+        }
+        tr:nth-child(even) .delete-btn-img {
+            background: #fff6ec;
+            border: 1px solid #fff6ec;
+        }
+        tr:nth-child(odd) .delete-btn-img {
+            background: #fffbe6;
+            border: 1px solid #fffbe6;
+        }
+        .delete-btn-img {
+            filter: drop-shadow(0 0 0px #ffb300) brightness(1.0);
+            transition: transform 0.15s, filter 0.15s, box-shadow 0.15s;
+            border-radius: 50%;
+        }
+        .delete-btn-img:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 12px #ffb300) brightness(1.4);
+            box-shadow: 0 0 16px 4px #ffb30080;
+            background: #fffbe6;
+            border: 1px solid #fffbe6;
+        }
+        .input-cell {
+            width: 90%;
+            padding: 8px 6px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fffef8;
+            box-sizing: border-box;
+        }
+        .input-cell:focus {
+            outline: 2px solid #ffb300;
+            background: #fffde4;
         }
         @media (max-width: 900px) {
             .farmer-img {
@@ -83,11 +147,40 @@
     </style>
 </head>
 <body>
-    <div class="title">食材追加</div>
-    <a href="manage.html">
-        <button class="back-btn" type="button">戻る</button>
-    </a>
-    <button class="add-btn" type="button">決定</button>
+    <form th:action="@{/albums/add}" th:object="${albumForm}" method="post">
+        <div class="title">食材追加</div>
+        <div class="table-area">
+            <table>
+                <thead>
+                    <tr>
+                        <th>食材名</th>
+                        <th>分量</th>
+                        <th>消費期限</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="title" name="title" th:field="*{title}" class="input-cell" placeholder="例：トマト">
+                        </td>
+                        <td>
+                            <input type="text" id="artist" name="artist" th:field="*{artist}" class="input-cell" placeholder="例：1個">
+                        </td>
+                        <td>
+                            <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}" class="input-cell">
+                        </td>
+                        <td>
+                            <button class="add-btn" type="submit" style="position:static; right:auto; bottom:auto; font-size:1.1rem; padding:6px 18px;">決定</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <form th:action="@{/albums/list}" method="get">
+        <button class="back-btn">戻る</button>
+    </form>
     <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
 </body>
 </html>

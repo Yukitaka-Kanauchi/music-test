@@ -47,6 +47,14 @@
         tr:nth-child(odd) td {
             background: #fffbe6; 
         }
+        tr:nth-child(even) .delete-btn-img {
+            background: #fff6ec;
+            border: 1px solid #fff6ec;
+        }
+        tr:nth-child(odd) .delete-btn-img {
+            background: #fffbe6;
+            border: 1px solid #fffbe6;
+        }
         .back-btn, .add-btn {
             position: absolute;
             bottom: 40px;
@@ -80,6 +88,18 @@
             bottom: 105px;
             width: 100px;
             height: auto;
+        }
+        .delete-btn-img {
+            filter: drop-shadow(0 0 0px #ffb300) brightness(1.0);
+            transition: transform 0.15s, filter 0.15s, box-shadow 0.15s;
+            border-radius: 50%;
+        }
+        .delete-btn-img:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 12px #ffb300) brightness(1.4);
+            box-shadow: 0 0 16px 4px #ffb30080;
+            background: #fffbe6;
+            border: 1px solid #fffbe6;
         }
         @media (max-width: 900px) {
             .farmer-img {
@@ -118,18 +138,20 @@
                     <th>操作</th>
                 </tr>
             </thead>
-            <body>
+            <tbody>
                 <tr th:each="album : ${albums}">
                     <td><span th:text="${album.title}">album title</span></td>
                     <td><span th:text="${album.artist}">album artist</span></td>
                     <td><span th:text="${album.releaseDate}">album </span></td>
                     <td>
                         <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post" style="margin:0;">
-                            <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
+                            <button type="submit" onclick="return confirm('本当に削除しますか？');" style="background: none; border: none; padding: 0; cursor: pointer;">
+                                <img src="https://illust8.com/wp-content/uploads/2018/08/mark_batsu_illust_898.png" alt="削除" width="28" height="28" class="delete-btn-img">
+                            </button>
                         </form>
                     </td>
                 </tr>
-            </body>
+            </tbody>
         </table>
     </div>
     <div th:repalce="~{layout :: footer}"></div>
