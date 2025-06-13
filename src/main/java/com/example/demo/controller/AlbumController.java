@@ -66,7 +66,7 @@ public class AlbumController {
     public String albumadd(Model model){
         AlbumForm albumForm_2 = new AlbumForm();
         model.addAttribute("albumForm", albumForm_2);
-        return "album/album-add";
+        return "menu/add";
     }
 
     @PostMapping("/add")
@@ -91,7 +91,7 @@ public class AlbumController {
     @PostMapping("/list")
     public String createAlbumtest(AlbumForm albumForm) {
         albumService.createAlbum(albumForm);
-        return "redirect:/albums";
+        return "redirect:/albums/list";
     }
 
     @GetMapping("/{albumId}")
