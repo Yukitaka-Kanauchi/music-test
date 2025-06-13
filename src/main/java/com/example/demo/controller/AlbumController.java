@@ -55,13 +55,25 @@ public class AlbumController {
         return "menu/suggest";
     }
 
-    @GetMapping("/wasyoku")
-    public String wasyokulist(Model model){
-        List<Album> wasyokulist = albumService.getAllAlbums();
-        model.addAttribute("albums", wasyokulist);
-        //return "album/album-list";
-        //return "album/album-first";
+    @GetMapping("/japanese_food")
+    public String japaneseFoodlist(Model model){
+        List<Album> japaneseFood = albumService.getAllAlbums();
+        model.addAttribute("albums", japaneseFood);
         return "menu/japan";
+    }
+
+    @GetMapping("/chinese_food")
+    public String chineseFoodlist(Model model){
+        List<Album> chineseFood = albumService.getAllAlbums();
+        model.addAttribute("albums", chineseFood);
+        return "menu/china";
+    }
+
+    @GetMapping("/western_food")
+    public String westernFoodlist(Model model){
+        List<Album> westernFood = albumService.getAllAlbums();
+        model.addAttribute("albums", westernFood);
+        return "menu/Western";
     }
 
     @GetMapping("/new")

@@ -52,7 +52,11 @@
 </head>
 <body>
     <div class="title">洋食</div>
+
+    <form th:action="@{/albums/suggest}" method="get">
     <button class="back-btn" onclick="location.href='suggest.html'">戻る</button>
+    </form>
+    
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
 </body>
 </html>
