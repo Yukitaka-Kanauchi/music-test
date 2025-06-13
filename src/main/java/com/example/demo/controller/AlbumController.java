@@ -91,7 +91,7 @@ public class AlbumController {
     @PostMapping("/list")
     public String createAlbumtest(AlbumForm albumForm) {
         albumService.createAlbum(albumForm);
-        return "redirect:/albums";
+        return "redirect:/albums/list";
     }
 
     @GetMapping("/{albumId}")
