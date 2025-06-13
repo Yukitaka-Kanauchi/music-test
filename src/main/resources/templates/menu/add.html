@@ -83,11 +83,14 @@
     </style>
 </head>
 <body>
+    
     <div class="title">食材追加</div>
-    <a href="manage.html">
-        <button class="back-btn" type="button">戻る</button>
-    </a>
-    <button class="add-btn" type="button">決定</button>
+    <form th:action="@{/albums/list}" method="get">
+        <button class="back-btn">戻る</button>
+    </form>
+    <form th:action="@{/albums/add}" th:object="${albumForm}" method="post">
+    <button class="add-btn">決定</button>
+    </form>
     <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
 </body>
 </html>
