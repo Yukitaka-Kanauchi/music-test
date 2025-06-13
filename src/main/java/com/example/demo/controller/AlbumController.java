@@ -55,6 +55,15 @@ public class AlbumController {
         return "menu/suggest";
     }
 
+    @GetMapping("/wasyoku")
+    public String wasyokulist(Model model){
+        List<Album> wasyokulist = albumService.getAllAlbums();
+        model.addAttribute("albums", wasyokulist);
+        //return "album/album-list";
+        //return "album/album-first";
+        return "menu/japan";
+    }
+
     @GetMapping("/new")
     public String albumForm(Model model) {
         AlbumForm albumForm = new AlbumForm();
