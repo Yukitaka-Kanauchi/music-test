@@ -37,16 +37,16 @@
             right: 40px;
             bottom: 40px;
             font-size: 2rem;
-            background: #c6ffd6;
-            color: #333;
-            border: 1px solid #aee5b8;
+            background: #ffb300; 
+            color: #ffffff;
+            border: 1px solid #ffb300; 
             border-radius: 4px;
             padding: 6px 28px;
             cursor: pointer;
             transition: background 0.2s;
         }
         .add-btn:hover {
-            background: #a8e6bb;
+            background: #e6d9a8;
             color: #222;
         }
         .farmer-img {
@@ -107,6 +107,19 @@
             background: #fffbe6;
             border: 1px solid #fffbe6;
         }
+        .input-cell {
+            width: 90%;
+            padding: 8px 6px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fffef8;
+            box-sizing: border-box;
+        }
+        .input-cell:focus {
+            outline: 2px solid #ffb300;
+            background: #fffde4;
+        }
         @media (max-width: 900px) {
             .farmer-img {
                 right: 20px;
@@ -135,40 +148,39 @@
 </head>
 <body>
     <form th:action="@{/albums/add}" th:object="${albumForm}" method="post">
-    <div class="title">食材追加</div>
-    <div class="table-area">
-        <table>
-            <thead>
-                <tr>
-                    <th>食材名</th>
-                    <th>分量</th>
-                    <th>消費期限</th>
-                    <th>操作</th>
-                </tr>
-            </thead>
-            <tbody>
-                <div>
-                    <label for="title">食材名：</label>
-                    <input type="text" id="title" name="title" th:field="*{title}">
-                </div>
-                <div>
-                    <label for="artist">分量：</label>
-                    <input type="text" id="artist" name="artist" th:field="*{artist}">
-                </div>
-                <div>
-                    <label for="release-date">消費期限：</label>
-                    <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}">
-                </div>
-            </tbody>
-        </table>
-    </div>
-    <button class="add-btn">決定</button>
+        <div class="title">食材追加</div>
+        <div class="table-area">
+            <table>
+                <thead>
+                    <tr>
+                        <th>食材名</th>
+                        <th>分量</th>
+                        <th>消費期限</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="title" name="title" th:field="*{title}" class="input-cell" placeholder="例：トマト">
+                        </td>
+                        <td>
+                            <input type="text" id="artist" name="artist" th:field="*{artist}" class="input-cell" placeholder="例：1個">
+                        </td>
+                        <td>
+                            <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}" class="input-cell">
+                        </td>
+                        <td>
+                            <button class="add-btn" type="submit" style="position:static; right:auto; bottom:auto; font-size:1.1rem; padding:6px 18px;">決定</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </form>
-
     <form th:action="@{/albums/list}" method="get">
         <button class="back-btn">戻る</button>
     </form>
-    </a>
     <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
 </body>
 </html>
