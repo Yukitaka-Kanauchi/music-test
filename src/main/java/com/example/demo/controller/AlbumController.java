@@ -62,6 +62,7 @@ public class AlbumController {
         return "album/album-form";
     }
 
+    //aaa
     @GetMapping("/add")
     public String albumadd(Model model){
         AlbumForm albumForm_2 = new AlbumForm();
