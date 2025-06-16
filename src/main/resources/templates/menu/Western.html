@@ -57,6 +57,11 @@
     <button class="back-btn">戻る</button>
     </form>
     
+    <tbody>
+        <tr th:each="you : ${albums}">
+            <td><span th:text="${you.title}">you title</title></span></td>
+            </tr>
+    </tbody>
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpIZdWeVjgN-QzltDbkIt25SkeriNOGc8WrSgRnmMG2d9rbtGJK-m5NesRB6zv73vG6fzm5HwXI0paRFFxESDMX9Ijm2EdYIyjfV5UAXtLKoYPLVXWttNb0BxxWAxXmPjVhYJTFkjO6rk/s400/cooking_skillet_hamburg.png"
      alt="ハンバーグ"

@@ -46,4 +46,12 @@ public class AlbumService {
         return albumRepository.getRandomJapaneseFood();
     }
 
+    public List<Album> getRandomWesternFood(){
+        return albumRepository.getRandomWesternFood();
+    }
+
+    public List<Album> getRandomChineseFood(){
+        return albumRepository.getRandomChineseFood();
+    }
+
 }

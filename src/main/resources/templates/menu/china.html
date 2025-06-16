@@ -56,6 +56,11 @@
     <button class="back-btn">戻る</button>
     </form>
     
+    <tbody>
+        <tr th:each="tyu : ${albums}">
+            <td><span th:text="${tyu.title}">tyu title</title></span></td>
+            </tr>
+    </tbody>
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjn20a2bZciwcdklpAIuGThqiNY60XAvMohtoHJSObkWqrNvcaop3grjLlS6vwgcwZmQWDqLY6ERpX083EgvfRYt-9pFFT9kFMqIym3tSDod16dhQ6sxJLas50xvQq8QgTXiCqFK_1PpeH8/s450/cha-han5_ankake.png"
      alt="炒飯"

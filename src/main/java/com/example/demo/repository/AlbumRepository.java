@@ -37,4 +37,12 @@ public class AlbumRepository{
     public List<Album> getRandomJapaneseFood(){
         return albumMapper.japaneseFoodDisplay();
     }
+
+    public List<Album> getRandomWesternFood(){
+        return albumMapper.westernFoodDisplay();
+    }
+
+     public List<Album> getRandomChineseFood(){
+        return albumMapper.chineseFoodDisplay();
+    }
 }
