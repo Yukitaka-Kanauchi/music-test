@@ -91,7 +91,7 @@
             font-weight: bold;
         }
         .styled-table {
-            width: 30%;
+            width: 26%;
             margin: 40px auto;
             background-color: #f8f8ff;
             border-collapse: collapse;
@@ -119,8 +119,10 @@
         <table class="styled-table my-table" style="margin-top: 75px; background-color:rgba(255, 255, 255, 0.7);">
             <tbody>
                 <tr th:each="wa : ${albums}">
-                    <td><span th:text="${wa.title}">wa title</title></span></td>
-                    <img th:src= "${wa.photo}"style="position: fixed; left:200px; bottom: 120px; width: 400px; z-index: 10;">
+                    <td style="text-align: center;">
+                        <span th:text="${wa.title}">wa title</span><br>
+                        <img th:src="${wa.photo}" style="width: 395px; z-index: 10; margin-top: 16px;">
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -134,7 +136,7 @@
 
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPzxC_jtce3-_zaEjX6syN6VsK2_yVjyVGfOUnpOvlF99HxPdfg9XdFcmjQ5xfdfQvgrNv6pXyyiPUyd99wQloB1nZ1lUdStAN4P1sFMprxITP7bGihAuHeGFDsbCuaZb6Qz5Jq0FVmgsp/s400/food_tenpura.png"
-    alt="天ぷら"
+    alt="てんぷら"
     style="position: fixed; left:200px; bottom: 120px; width: 200px; z-index: 10;">
 </body>
 </html>
