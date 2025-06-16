@@ -58,6 +58,10 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            font-family: 'Meiryo', 'Yu Gothic', sans-serif; /* 和食と同じフォント */
+            font-weight: 700; /* さらに太字 */
+            color: #333;
+            background-color: #f0f8ff;
         }
         th, td {
             padding: 12px;
@@ -65,7 +69,13 @@
             border-bottom: 1px solid #ddd;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #1976d2; /* ヘッダー背景色 */
+            color: #fff;               /* ヘッダー文字色 */
+            font-weight: 800; /* ヘッダーはさらに太字 */
+        }
+        td {
+            background-color: #e3f2fd; /* セル背景色 */
+            color: #222;               /* セル文字色 */
         }
         .album-titles {
             display: flex;
@@ -77,11 +87,11 @@
         .album-title {
             display: inline-block;
             margin: 0 12px;
-            font-size: 1.2em;
+            font-size: 2em;
             font-weight: bold;
         }
         .styled-table {
-            width: 80%;
+            width: 30%;
             margin: 40px auto;
             background-color: #f8f8ff;
             border-collapse: collapse;
@@ -106,7 +116,7 @@
     </form>
 
     <div class="table-area">
-        <table class="styled-table" style="margin-top: 150px; background-color:rgba(255, 255, 255, 0.7);">
+        <table class="styled-table my-table" style="margin-top: 75px; background-color:rgba(255, 255, 255, 0.7);">
             <tbody>
                 <tr th:each="wa : ${albums}">
                     <td><span th:text="${wa.title}">wa title</title></span></td>
@@ -122,9 +132,6 @@
     </div>
 
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOorHbHhzRxe67oALfEOzWwsdb-hM0IcYY5Qk4AX_PKIV0oWGvlRSNH_xTsURf5pJLGkoFLchmpygYiaKGsWWBuNSwArBkpP4m_7TDWxqZIOePKuu9hSXCU_teOXjYASCDrtZPi_OgAwq4/s180-c/food_udon_zaru.png"
-     alt="ざるうどん"
-     style="position: absolute; top: 50px; right: 200px; width: 200px; z-index: 15;">
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPzxC_jtce3-_zaEjX6syN6VsK2_yVjyVGfOUnpOvlF99HxPdfg9XdFcmjQ5xfdfQvgrNv6pXyyiPUyd99wQloB1nZ1lUdStAN4P1sFMprxITP7bGihAuHeGFDsbCuaZb6Qz5Jq0FVmgsp/s400/food_tenpura.png"
      alt="天ぷら"
      style="position: fixed; left:200px; bottom: 120px; width: 200px; z-index: 10;">

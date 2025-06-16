@@ -48,6 +48,35 @@
         .reload-btn:hover {
             background: #ffb300;
         }
+        .album-titles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 0;
+        }
+        .album-title {
+            display: inline-block;
+            margin: 0 12px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .styled-table {
+            width: 30%;
+            margin: 40px auto;
+            background-color: #f8f8ff;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .styled-table th, .styled-table td {
+            padding: 16px 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .styled-table th {
+            background-color: #4f6d7a;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -57,15 +86,22 @@
     <button class="back-btn">戻る</button>
     </form>
     
-    <tbody>
-        <tr th:each="you : ${albums}">
-            <td><span th:text="${you.title}">you title</title></span></td>
-            </tr>
-    </tbody>
+    <div class="table-area">
+        <table class="styled-table my-table" style="margin-top: 75px; background-color:rgba(255, 255, 255, 0.7);">
+            <tbody>
+                <tr th:each="you : ${albums}">
+                    <td><span th:text="${you.title}">you title</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="album-titles">
+        <div>
+            <span th:each="album : ${albumList}" th:text="${album.title}" class="album-title"></span>
+        </div>
+    </div>
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpIZdWeVjgN-QzltDbkIt25SkeriNOGc8WrSgRnmMG2d9rbtGJK-m5NesRB6zv73vG6fzm5HwXI0paRFFxESDMX9Ijm2EdYIyjfV5UAXtLKoYPLVXWttNb0BxxWAxXmPjVhYJTFkjO6rk/s400/cooking_skillet_hamburg.png"
-     alt="ハンバーグ"
-     style="position: absolute; top: 50px; right: 200px; width: 200px; z-index: 15;">
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg5nDb_mCwhuyWtSDadS6fFWmUKskJCha5EifBMoq68cjQDZ11qrrEbRvUApAUlslPxUMNSshjnXqQpSZz1SBgwWdBTD7-i4tCsU39fQukZDMjRHmB8V5UgTak5uhbV-RwF37CIRnRt9Ex/s400/food_omurice.png"
      alt="オムライス"
      style="position: fixed; left:200px; bottom: 120px; width: 200px; z-index: 10;">
