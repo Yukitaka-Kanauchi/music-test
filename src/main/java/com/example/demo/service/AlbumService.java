@@ -41,4 +41,9 @@ public class AlbumService {
         }
         albumRepository.updateAlbum(album);
     }
+
+    public List<Album> getRandomJapaneseFood(){
+        return albumRepository.getRandomJapaneseFood();
+    }
+
 }

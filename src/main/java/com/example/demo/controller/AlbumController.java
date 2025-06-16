@@ -46,6 +46,13 @@ public class AlbumController {
         return "menu/manage";
     }
 
+    @GetMapping("/randomFood_japan")
+    public String JapaneseFoodList(Model model){
+        List<Album> japaneseRandomFoods = albumService.getRandomJapaneseFood();
+        model.addAttribute("albums", japaneseRandomFoods);
+        return "menu/japan";
+    }
+
     @GetMapping("/suggest")
     public String disheslist(Model model){
         List<Album> disheslist = albumService.getAllAlbums();
