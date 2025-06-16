@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 public class Album {
     private long albumId;
     private String title;
+    private String photo;
     private String artist;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;

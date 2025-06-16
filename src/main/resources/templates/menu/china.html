@@ -120,6 +120,7 @@
             <tbody>
                 <tr th:each="tyu : ${albums}">
                     <td><span th:text="${tyu.title}">tyu title</span></td>
+                    <img th:src= "${tyu.photo}"style="position: fixed; left:200px; bottom: 120px; width: 400px; z-index: 10;">
                 </tr>
             </tbody>
         </table>
@@ -132,7 +133,7 @@
     </div>
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEig5XCGB2c9H8EWasug6RTzmlRfTYrRqiTws1E31MKDbPdAwFyllsi4QfvH4SJGDwch39j0T0-Ghsv7w61Y9HrU5Q2Tk-xFsqxV84KBuTl8SeYbqwqhBkkGWRUKRJm4uf5UMWmPQS6AGICS/s400/food_gyouza_mise.png"
-     alt="餃子"
-     style="position: fixed; left:200px; bottom: 120px; width: 200px; z-index: 10;">
+    alt="餃子"
+    style="position: fixed; left:200px; bottom: 120px; width: 200px; z-index: 10;">
 </body>
 </html>
