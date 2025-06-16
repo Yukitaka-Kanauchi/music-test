@@ -34,4 +34,9 @@ public interface AlbumMapper {
     @Select("SELECT * FROM wa ORDER BY RANDOM() LIMIT 1")
     List<Album> japaneseFoodDisplay();
 
+    @Select("SELECT * FROM you ORDER BY RANDOM() LIMIT 1")
+    List<Album> westernFoodDisplay();
+
+    @Select("SELECT * FROM tyu ORDER BY RANDOM() LIMIT 1")
+    List<Album> chineseFoodDisplay();
 }
