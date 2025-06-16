@@ -53,6 +53,20 @@ public class AlbumController {
         return "menu/japan";
     }
 
+    @GetMapping("/randomFood_western")
+    public String WesternFoodList(Model model){
+        List<Album> westernRandomFoods = albumService.getRandomWesternFood();
+        model.addAttribute("albums", westernRandomFoods);
+        return "menu/Western";
+    }
+
+     @GetMapping("/randomFood_chinese")
+    public String ChineseFoodList(Model model){
+        List<Album> chineseRandomFoods = albumService.getRandomChineseFood();
+        model.addAttribute("albums", chineseRandomFoods);
+        return "menu/china";
+    }
+
     @GetMapping("/suggest")
     public String disheslist(Model model){
         List<Album> disheslist = albumService.getAllAlbums();
