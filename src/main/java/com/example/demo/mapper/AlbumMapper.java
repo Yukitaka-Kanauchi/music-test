@@ -31,4 +31,7 @@ public interface AlbumMapper {
     @Update("UPDATE albums SET title = #{title}, artist = #{artist}, release_date = #{releaseDate} WHERE album_id = #{albumId}")
     void updateAlbum(Album album);
 
+    @Select("SELECT * FROM wa ORDER BY RANDOM() LIMIT 1")
+    List<Album> japaneseFoodDisplay();
+
 }

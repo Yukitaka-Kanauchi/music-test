@@ -54,8 +54,23 @@
     <div class="title">和食</div>
     
     <form th:action="@{/albums/suggest}" method="get">
-    <button class="back-btn" onclick="location.href='suggest.html'">戻る</button>
+    <button class="back-btn">戻る</button>
     </form>
+
+    <tbody>
+        <tr th:each="wa : ${albums}">
+            <td><span th:text="${wa.title}">wa title</title></span></td>
+            <!--<td><span th:text="${album.artist}">album artist</span></td>
+            <td><span th:text="${album.releaseDate}">album </span></td>
+            <td>
+                <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post" style="margin:0;">
+                    <button type="submit" onclick="return confirm('本当に削除しますか？');" style="background: none; border: none; padding: 0; cursor: pointer;">
+                        <img src="https://illust8.com/wp-content/uploads/2018/08/mark_batsu_illust_898.png" alt="削除" width="28" height="28" class="delete-btn-img">
+                    </button>
+                </form>
+            </td>-->
+        </tr>
+    </tbody>
 
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOorHbHhzRxe67oALfEOzWwsdb-hM0IcYY5Qk4AX_PKIV0oWGvlRSNH_xTsURf5pJLGkoFLchmpygYiaKGsWWBuNSwArBkpP4m_7TDWxqZIOePKuu9hSXCU_teOXjYASCDrtZPi_OgAwq4/s180-c/food_udon_zaru.png"

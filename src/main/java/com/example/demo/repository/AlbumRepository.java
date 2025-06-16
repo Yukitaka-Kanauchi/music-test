@@ -33,4 +33,8 @@ public class AlbumRepository{
     public void updateAlbum(Album album){
         albumMapper.updateAlbum(album);
     }
+
+    public List<Album> getRandomJapaneseFood(){
+        return albumMapper.japaneseFoodDisplay();
+    }
 }
