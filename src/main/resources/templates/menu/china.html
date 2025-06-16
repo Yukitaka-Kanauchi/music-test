@@ -56,6 +56,11 @@
     <button class="back-btn">戻る</button>
     </form>
     
+    <tbody>
+        <tr th:each="tyu : ${albums}">
+            <td><span th:text="${tyu.title}">tyu title</title></span></td>
+            </tr>
+    </tbody>
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
 </body>
 </html>
