@@ -181,6 +181,24 @@
     <form th:action="@{/albums/list}" method="get">
         <button class="back-btn">戻る</button>
     </form>
-    <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
+    <img class="farmer-img" id="farmerImg" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
+    <script>
+        let clickCount = 0;
+        const farmerImg = document.getElementById('farmerImg');
+        const images = [
+            "https://th.bing.com/th/id/OIP.QGTTIMQ8hkwQeG0RxR3HDgHaHX?w=298&h=295&c=10&rs=1&bgcl=fffffe&r=0&o=6&dpr=1.3&pid=23.1",
+            "https://th.bing.com/th/id/OIP.oIfXwqOCcfEkCVSlnidHcQAAAA?w=151&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+            "https://th.bing.com/th/id/OIP.vV3o1TUo_ceiTaFqXJlgNAHaEF?w=283&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+            "https://th.bing.com/th/id/OIP.0aTjw-YCavnVHT_Tglnf8QHaEK?w=308&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+        ];
+        farmerImg.addEventListener('click', function() {
+            clickCount++;
+            if (clickCount === 10) {
+                const randomIndex = Math.floor(Math.random() * images.length);
+                farmerImg.src = images[randomIndex];
+                farmerImg.style.width = "300px";
+            }
+        });
+    </script>
 </body>
 </html>
