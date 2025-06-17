@@ -141,7 +141,7 @@
             <tbody>
                 <tr th:each="album : ${albums}">
                     <td><span th:text="${album.title}">album title</span></td>
-                    <td><span th:text="${album.artist}">album artist</span></td>
+                    <td><span th:text="${album.artistInt}">album artist</span></td>
                     <td><span th:text="${album.releaseDate}">album </span></td>
                     <td>
                         <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post" style="margin:0;">

@@ -18,7 +18,7 @@ public interface AlbumMapper {
     @Select("SELECT * FROM albums")
     List<Album> selectAllAlbums();
 
-    @Insert("INSERT INTO albums (title, artist_int, release_date) VALUES (#{title}, #{artist}, #{releaseDate})")
+    @Insert("INSERT INTO albums (title, artist_int, release_date) VALUES (#{title}, #{artistInt}, #{releaseDate})")
     @Options(useGeneratedKeys = true, keyProperty = "albumId")
     void insertAlbum(Album album);
 
@@ -28,7 +28,7 @@ public interface AlbumMapper {
     @Delete("DELETE FROM albums WHERE album_id = #{albumId}")
     void deleteAlbumById(long albumId);
 
-    @Update("UPDATE albums SET title = #{title}, artist_int = #{artist}, release_date = #{releaseDate} WHERE album_id = #{albumId}")
+    @Update("UPDATE albums SET title = #{title}, artist_int = #{artistInt}, release_date = #{releaseDate} WHERE album_id = #{albumId}")
     void updateAlbum(Album album);
 
     @Select("SELECT * FROM wa ORDER BY RANDOM() LIMIT 1")
