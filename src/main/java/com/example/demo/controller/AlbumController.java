@@ -60,7 +60,7 @@ public class AlbumController {
         return "menu/Western";
     }
 
-     @GetMapping("/randomFood_chinese")
+    @GetMapping("/randomFood_chinese")
     public String ChineseFoodList(Model model){
         List<Album> chineseRandomFoods = albumService.getRandomChineseFood();
         model.addAttribute("albums", chineseRandomFoods);

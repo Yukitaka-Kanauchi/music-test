@@ -1367,9 +1367,15 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/De
 >>>>>>> Day1_Kojima
 =======
 >>>>>>> Day1_Nakayama
+<<<<<<< HEAD
+2025-06-16 11:34:34.332303+09:00 database: flush
+org.h2.message.DbException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]" [50000-232]
+=======
 2025-06-16 11:50:44.180794+09:00 database: flush
 org.h2.message.DbException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/新しいフォルダー/music-test/albumdb.mv.db [2.3.232/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/新しいフォルダー/music-test/albumdb.mv.db [2.3.232/7]" [50000-232]
+>>>>>>> origin/mearge_branch
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:407)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
@@ -1473,6 +1479,17 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/us
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351)
 	at com.example.demo.DemoApplication.main(DemoApplication.java:10)
+<<<<<<< HEAD
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 106 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]
+=======
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
@@ -1603,6 +1620,151 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/us
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 106 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/新しいフォルダー/music-test/albumdb.mv.db [2.3.232/7]
+>>>>>>> origin/mearge_branch
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 100 more
+<<<<<<< HEAD
+2025-06-16 12:08:57.460724+09:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "UPDATE tyu\000d\000aSET photo = CASE\000d\000a    WHEN title = '麻婆豆腐' THEN https[*]://www.free-materials.com/adm/wp-content/uploads/2022/09/0adpDSC_3274-.jpg'\000d\000a    WHEN title = '酸辣湯' THEN https://th.bing.com/th/id/OIP.02TGMVZa8f-bmIckxn2XYwHaEn?w=283&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = '麻辣湯' THEN 'https://th.bing.com/th/id/OIP.pCFSVc2wNap8q15dhXl5pAHaFH?w=293&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = '回鍋肉' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2024/08/adpDSC_9042-.jpg'\000d\000a    WHEN title = '刀削麺' THEN 'https://th.bing.com/th/id/OIP.mhMgs5DoJXk5iDDg4mA9pgHaFj?w=259&h=194&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = '青椒肉絲' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2020/07/adpDSC_6928-760x507-1.jpg'\000d\000a    WHEN title = '棒棒鶏' THEN 'https://th.bing.com/th/id/OIP.W5kks0oeFHBPC-FN4RU80gHaFj?w=277&h=208&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = '餃子' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2021/06/0adpDSC_6880-.jpg'\000d\000a    WHEN title = 'エビチリ' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2018/05/adpDSC_8375-.jpg'\000d\000a    WHEN title = '炒飯' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2022/05/0adpDSC_4616-.jpg'\000d\000a    WHEN title = '春巻き' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2020/08/adpDSC_7514-.jpg'\000d\000a    WHEN title = '小籠包' THEN 'https://th.bing.com/th/id/OIP.df6Yo5qRGOONkAfXqvZ0UgHaHa?w=196&h=197&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = 'フカヒレスープ' THEN 'https://th.bing.com/th/id/OIP.L69YQ1qvh2CLJc-eVJT-xwHaEK?w=298&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    ELSE photo\000d\000aEND"; 期待されるステートメント "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, WHEN, ELSE, END"
+Syntax error in SQL statement "UPDATE tyu\000d\000aSET photo = CASE\000d\000a    WHEN title = '麻婆豆腐' THEN https[*]://www.free-materials.com/adm/wp-content/uploads/2022/09/0adpDSC_3274-.jpg'\000d\000a    WHEN title = '酸辣湯' THEN https://th.bing.com/th/id/OIP.02TGMVZa8f-bmIckxn2XYwHaEn?w=283&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = '麻辣湯' THEN 'https://th.bing.com/th/id/OIP.pCFSVc2wNap8q15dhXl5pAHaFH?w=293&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = '回鍋肉' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2024/08/adpDSC_9042-.jpg'\000d\000a    WHEN title = '刀削麺' THEN 'https://th.bing.com/th/id/OIP.mhMgs5DoJXk5iDDg4mA9pgHaFj?w=259&h=194&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = '青椒肉絲' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2020/07/adpDSC_6928-760x507-1.jpg'\000d\000a    WHEN title = '棒棒鶏' THEN 'https://th.bing.com/th/id/OIP.W5kks0oeFHBPC-FN4RU80gHaFj?w=277&h=208&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = '餃子' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2021/06/0adpDSC_6880-.jpg'\000d\000a    WHEN title = 'エビチリ' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2018/05/adpDSC_8375-.jpg'\000d\000a    WHEN title = '炒飯' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2022/05/0adpDSC_4616-.jpg'\000d\000a    WHEN title = '春巻き' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2020/08/adpDSC_7514-.jpg'\000d\000a    WHEN title = '小籠包' THEN 'https://th.bing.com/th/id/OIP.df6Yo5qRGOONkAfXqvZ0UgHaHa?w=196&h=197&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    WHEN title = 'フカヒレスープ' THEN 'https://th.bing.com/th/id/OIP.L69YQ1qvh2CLJc-eVJT-xwHaEK?w=298&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'\000d\000a    ELSE photo\000d\000aEND"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, WHEN, ELSE, END"; SQL statement:
+UPDATE tyu
+SET photo = CASE
+    WHEN title = '麻婆豆腐' THEN https://www.free-materials.com/adm/wp-content/uploads/2022/09/0adpDSC_3274-.jpg'
+    WHEN title = '酸辣湯' THEN https://th.bing.com/th/id/OIP.02TGMVZa8f-bmIckxn2XYwHaEn?w=283&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'
+    WHEN title = '麻辣湯' THEN 'https://th.bing.com/th/id/OIP.pCFSVc2wNap8q15dhXl5pAHaFH?w=293&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'
+    WHEN title = '回鍋肉' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2024/08/adpDSC_9042-.jpg'
+    WHEN title = '刀削麺' THEN 'https://th.bing.com/th/id/OIP.mhMgs5DoJXk5iDDg4mA9pgHaFj?w=259&h=194&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'
+    WHEN title = '青椒肉絲' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2020/07/adpDSC_6928-760x507-1.jpg'
+    WHEN title = '棒棒鶏' THEN 'https://th.bing.com/th/id/OIP.W5kks0oeFHBPC-FN4RU80gHaFj?w=277&h=208&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'
+    WHEN title = '餃子' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2021/06/0adpDSC_6880-.jpg'
+    WHEN title = 'エビチリ' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2018/05/adpDSC_8375-.jpg'
+    WHEN title = '炒飯' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2022/05/0adpDSC_4616-.jpg'
+    WHEN title = '春巻き' THEN 'https://www.free-materials.com/adm/wp-content/uploads/2020/08/adpDSC_7514-.jpg'
+    WHEN title = '小籠包' THEN 'https://th.bing.com/th/id/OIP.df6Yo5qRGOONkAfXqvZ0UgHaHa?w=196&h=197&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'
+    WHEN title = 'フカヒレスープ' THEN 'https://th.bing.com/th/id/OIP.L69YQ1qvh2CLJc-eVJT-xwHaEK?w=298&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3'
+    ELSE photo
+END [42001-232]
+=======
+>>>>>>> origin/mearge_branch
+2025-06-16 13:44:29.593017+09:00 database: flush
+org.h2.message.DbException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:139)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:483)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:101)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:52)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applySchemaScripts(AbstractScriptDatabaseInitializer.java:98)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:76)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1682)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1682)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1682)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351)
+	at com.example.demo.DemoApplication.main(DemoApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: 一般エラー: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]" [50000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 106 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/Desktop/MUSIC/music-test/albumdb.mv.db [2.3.232/7]
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
 	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)

@@ -48,6 +48,64 @@
         .reload-btn:hover {
             background: #ffb300;
         }
+        .table-area {
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+            max-width: 100%;
+            margin-bottom: 24px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Meiryo', 'Yu Gothic', sans-serif; 
+            font-weight: 700; 
+            color: #333;
+            background-color: #f0f8ff;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #1976d2; 
+            color: #fff;              
+            font-weight: 800; 
+        }
+        td {
+            background-color: #e3f2fd; 
+            color: #222;              
+        }
+        .album-titles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 24px 0;
+        }
+        .album-title {
+            display: inline-block;
+            margin: 0 12px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .styled-table {
+            width: 26%;
+            margin: 40px auto;
+            background-color: #f8f8ff;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .styled-table th, .styled-table td {
+            padding: 16px 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .styled-table th {
+            background-color: #4f6d7a;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -57,12 +115,27 @@
     <button class="back-btn">戻る</button>
     </form>
     
-    <tbody>
-        <tr th:each="you : ${albums}">
-            <td><span th:text="${you.title}">you title</title></span></td>
-            </tr>
-    </tbody>
-    <button class="reload-btn" onclick="location.reload()">もう１回</button>
+    <div class="table-area">
+        <table class="styled-table my-table" style="margin-top: 75px; background-color:rgba(255, 255, 255, 0.7);">
+            <tbody>
+                <tr th:each="you : ${albums}">
+                    <td style="text-align: center;">
+                        <span th:text="${you.title}">you title</span><br>
+                        <img th:src="${you.photo}" style="width: 395px; z-index: 10; margin-top: 16px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
+    <div class="album-titles">
+        <div>
+            <span th:each="album : ${albumList}" th:text="${album.title}" class="album-title"></span>
+        </div>
+    </div>
+    <button class="reload-btn" onclick="location.reload()">もう１回</button>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg5nDb_mCwhuyWtSDadS6fFWmUKskJCha5EifBMoq68cjQDZ11qrrEbRvUApAUlslPxUMNSshjnXqQpSZz1SBgwWdBTD7-i4tCsU39fQukZDMjRHmB8V5UgTak5uhbV-RwF37CIRnRt9Ex/s400/food_omurice.png"
+    alt="オムライス"
+    style="position: fixed; left:200px; bottom: 120px; width: 200px; z-index: 10;">
 </body>
 </html>
