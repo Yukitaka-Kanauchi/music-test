@@ -28,6 +28,7 @@
             padding: 6px 28px;
             cursor: pointer;
             transition: background 0.2s;
+            z-index: 2;
         }
         .back-btn:hover {
             background: #888;
@@ -44,9 +45,17 @@
             padding: 6px 28px;
             cursor: pointer;
             transition: background 0.2s;
+            z-index: 2;
         }
         .reload-btn:hover {
             background: #ffb300;
+        }
+        .gyo-img {
+            position: absolute;
+            left: 200px;
+            bottom: 120px;
+            width: 200px;
+            z-index: 0;
         }
         .table-area {
             display: flex;
@@ -54,6 +63,8 @@
             overflow-x: auto;
             max-width: 100%;
             margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
         }
         table {
             width: 100%;
@@ -134,8 +145,6 @@
         </div>
     </div>
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEig5XCGB2c9H8EWasug6RTzmlRfTYrRqiTws1E31MKDbPdAwFyllsi4QfvH4SJGDwch39j0T0-Ghsv7w61Y9HrU5Q2Tk-xFsqxV84KBuTl8SeYbqwqhBkkGWRUKRJm4uf5UMWmPQS6AGICS/s400/food_gyouza_mise.png"
-    alt="餃子"
-    style="position: fixed; left:200px; bottom: 120px; width: 200px; z-index: 10;">
+    <img class="gyo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEig5XCGB2c9H8EWasug6RTzmlRfTYrRqiTws1E31MKDbPdAwFyllsi4QfvH4SJGDwch39j0T0-Ghsv7w61Y9HrU5Q2Tk-xFsqxV84KBuTl8SeYbqwqhBkkGWRUKRJm4uf5UMWmPQS6AGICS/s400/food_gyouza_mise.png" alt="餃子">
 </body>
 </html>
