@@ -42,7 +42,7 @@ public class AlbumRepository{
         return albumMapper.westernFoodDisplay();
     }
 
-     public List<Album> getRandomChineseFood(){
+    public List<Album> getRandomChineseFood(){
         return albumMapper.chineseFoodDisplay();
     }
 }

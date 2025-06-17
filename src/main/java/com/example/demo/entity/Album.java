@@ -10,7 +10,7 @@ public class Album {
     private long albumId;
     private String title;
     private String photo;
-    private String artist;
+    private int artist;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;
     private LocalDateTime createdAt;

@@ -165,7 +165,7 @@
                             <input type="text" id="title" name="title" th:field="*{title}" class="input-cell" placeholder="例：トマト">
                         </td>
                         <td>
-                            <input type="text" id="artist" name="artist" th:field="*{artist}" class="input-cell" placeholder="例：1個">
+                            <input type="number" step="1" id="artist_int" name="artist_int" th:field="*{artist}" class="input-cell" placeholder="例: 1">
                         </td>
                         <td>
                             <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}" class="input-cell">
