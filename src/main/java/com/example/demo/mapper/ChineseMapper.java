@@ -8,6 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface ChineseMapper {
-    @Select("SELECT * FROM wa ORDER BY RANDOM() LIMIT 1")
+    @Select("SELECT * FROM tyu ORDER BY RANDOM() LIMIT 1")
     List<ChineseFood> ChineseFoodDisplay();
 }
