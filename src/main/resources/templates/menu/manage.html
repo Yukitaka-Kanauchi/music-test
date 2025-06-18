@@ -27,17 +27,56 @@
             position: relative;
             z-index: 1;
         }
-        table {
+        .table-area table {
             border-collapse: collapse;
             background: #fff;
             min-width: 600px;
+            width: 600px;
+            table-layout: fixed;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-        th, td {
+        .table-area thead, .table-area tfoot {
+            width: 100%;
+        }
+        .table-area tbody {
+            display: block;
+            max-height: 320px; /* 必要に応じて調整 */
+            overflow-y: auto;
+            width: 100%;
+        }
+        .table-area thead, .table-area tfoot {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+        .table-area tbody tr {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+        .table-area th, .table-area td {
+            width: 25%; /* 列数に合わせて均等に。必要なら個別指定もOK */
+            box-sizing: border-box;
             border: 1px solid #fff;
             padding: 14px 24px;
             text-align: center;
             font-size: 1.1rem;
+        }
+        .table-area th:nth-child(1),
+        .table-area td:nth-child(1) { /* 食材名 */
+            width: 220px;
+        }
+        .table-area th:nth-child(2),
+        .table-area td:nth-child(2) { /* 分量 */
+            width: 80px;
+        }
+        .table-area th:nth-child(3),
+        .table-area td:nth-child(3) { /* 期限 */
+            width: 200px;
+        }
+        .table-area th:nth-child(4),
+        .table-area td:nth-child(4) { /* 操作 */
+            width: 100px;
         }
         th {
             background: #ffb300; 
@@ -125,7 +164,7 @@
                 font-size: 2rem;
                 margin-top: 24px;
             }
-            table {
+            .table-area table {
                 min-width: 90vw;
             }
         }
@@ -143,7 +182,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="album : ${albums}">
+                <tr th:each="album: ${albums}">
                     <td><span th:text="${album.title}">album title</span></td>
                     <td><span th:text="${album.artistInt}">album artist</span></td>
                     <td><span th:text="${album.releaseDate}">album </span></td>
@@ -155,11 +194,12 @@
                             <button type="submit" onclick="return confirm('本当に削除しますか？');" style="background: none; border: none; padding: 0; cursor: pointer;">
                                 <img src="https://illust8.com/wp-content/uploads/2018/08/mark_batsu_illust_898.png" alt="削除" width="28" height="28" class="delete-btn-img">
                             </button>
+                            
                         </form>
                     </td>
                 </tr>
             </tbody>
-        </table>
+            </table>
     </div>
     <div th:repalce="~{layout :: footer}"></div>
 
@@ -172,4 +212,5 @@
     </form>
     <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
     <img src="/img/logo.png" alt="ロゴ" style="position: absolute; top: 20px; left: 20px; width: 100px; opacity: 0.5;">
+</body>
 </html>
