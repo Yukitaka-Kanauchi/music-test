@@ -6,6 +6,6 @@ import java.time.LocalDate;
 @Data
 public class AlbumForm {
     private String title;
-    private String artist;
+    private int artist;
     private LocalDate releaseDate;
 }
