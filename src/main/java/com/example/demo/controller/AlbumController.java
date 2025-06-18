@@ -76,11 +76,25 @@ public class AlbumController {
     }
 
 
-    @GetMapping("/new")
-    public String albumForm(Model model) {
-        AlbumForm albumForm = new AlbumForm();
-        model.addAttribute("albumForm", albumForm);
-        return "album/album-form";
+    @GetMapping("/displayRecipe_japan")
+    public String dispRecipeJapan(Model model) {
+        AlbumForm japanRecipe = new AlbumForm();
+        model.addAttribute("albumForm", japanRecipe);
+        return "menu/displayRecipeJapan";
+    }
+
+    @GetMapping("/displayRecipe_chinese")
+    public String dispRecipeChinese(Model model) {
+        AlbumForm chineseRecipe = new AlbumForm();
+        model.addAttribute("albumForm", chineseRecipe);
+        return "menu/displayRecipeChinese";
+    }
+
+    @GetMapping("/displayRecipe_western")
+    public String dispRecipeWestern(Model model) {
+        AlbumForm westernRecipe = new AlbumForm();
+        model.addAttribute("albumForm", westernRecipe);
+        return "menu/displayRecipeWestern";
     }
 
     @GetMapping("/add")

@@ -133,7 +133,11 @@
                 <tr th:each="wa : ${albums}">
                     <td style="text-align: center;">
                         <span th:text="${wa.title}">wa title</span><br>
-                        <img th:src="${wa.photo}" style="width: 395px; z-index: 10; margin-top: 16px;">
+                        <form th:action="@{/albums/displayRecipe_japan}" method="get">
+                            <button>
+                                <img th:src="${wa.photo}" style="width: 395px; z-index: 10; margin-top: 16px;">
+                            </button>
+                        </form>
                     </td>
                 </tr>
             </tbody>
