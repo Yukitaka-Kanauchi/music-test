@@ -11,7 +11,6 @@ import java.util.List;
 
 import com.example.demo.form.AlbumForm;
 import org.springframework.web.bind.annotation.PostMapping;
-//giglgiggliu
 import com.example.demo.entity.Music;
 import com.example.demo.service.MusicService;
 
@@ -76,6 +75,7 @@ public class AlbumController {
         return "menu/suggest";
     }
 
+
     @GetMapping("/new")
     public String albumForm(Model model) {
         AlbumForm albumForm = new AlbumForm();
@@ -96,14 +96,6 @@ public class AlbumController {
         return "redirect:/albums/list";
     }
 
-    /*
-    @PostMapping("/new")
-    public String createAlbum(AlbumForm albumForm, Model model) {
-        albumService.createAlbum(albumForm);
-        List<Album> albums = albumService.getAllAlbums();
-        model.addAttribute("albums", albums);
-        return "album/album-list";
-     */
     @PostMapping("/new")
     public String createAlbum(AlbumForm albumForm) {
         albumService.createAlbum(albumForm);
@@ -115,7 +107,6 @@ public class AlbumController {
         return "redirect:/albums/list";
     }
 
-    //aaa
     @GetMapping("/{albumId}")
     public String album(@PathVariable long albumId, Model model) {
         Album album = albumService.getAlbumById(albumId);
@@ -134,13 +125,16 @@ public class AlbumController {
     @GetMapping("/{albumId}/edit")
     public String editAlbum(@PathVariable long albumId, Model model) {
         Album album = albumService.getAlbumById(albumId);
+        AlbumForm albumForm = new AlbumForm();
         model.addAttribute("album", album);
-        return "album/album-edit";
+        model.addAttribute("albumForm", albumForm);
+
+        return "menu/edit";
     }
     @PostMapping("/{albumId}/edit")
     public String updateAlbum(@PathVariable long albumId, Album album) {
         albumService.updateAlbum(albumId, album);
-        return "redirect:/albums";
+        return "redirect:/albums/list";
     }
     @GetMapping("/{albumId}/musics/new")
     public String createMusicForm(@PathVariable long albumId, Model model) {
