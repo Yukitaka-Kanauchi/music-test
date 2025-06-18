@@ -166,13 +166,13 @@
                 <tbody>
                     <tr>
                         <td>
-                            <input type="text" id="title" name="title" th:field="*{title}" class="input-cell" placeholder="例：トマト">
+                            <input type="text" id="title" name="title" th:field="*{title}" class="input-cell" placeholder="例：トマト" required>
                         </td>
                         <td>
-                            <input type="number" id="artist_int" name="artist_int" min="1" class="input-cell" placeholder="例: 1">
+                            <input type="number" id="artist_int" name="artist_int" th:field="*{artist}" min="1" class="input-cell" placeholder="例: 1">
                         </td>
                         <td>
-                            <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}" class="input-cell">
+                            <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}" class="input-cell" required>
                         </td>
                         <td>
                             <button class="add-btn" type="submit" style="position:static; right:auto; bottom:auto; font-size:1.1rem; padding:6px 18px;">決定</button>
