@@ -202,7 +202,7 @@
             <tbody>
                 <tr th:each="album: ${albums}">
                     <td><span th:text="${album.title}">album title</span></td>
-                    <td><span th:text="|${album.artistInt} ${album.unit}|"></span></td>
+                    <td><span th:text="|${album.artistInt} ${album.tani}|"></span></td>
                     <td><span th:text="${album.releaseDate}">album </span></td>
                     <td>
                         <form th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" method="get" style="display:inline; margin:0; padding:0;">

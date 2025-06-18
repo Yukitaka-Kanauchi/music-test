@@ -168,9 +168,4 @@ public class AlbumController {
         return "redirect:/albums/" + albumId;
     }
     
-    @PostMapping("/albums/add")
-    public String addAlbum(@ModelAttribute Album album) {
-    albumService.save(album);
-    return "redirect:/albums/manage";
-}
 }
