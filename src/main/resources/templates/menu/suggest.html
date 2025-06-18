@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>料理提案</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
     <style>
         body {
             background: #fdf0c8;
@@ -75,13 +76,6 @@
         .back-btn:hover {
             background: #888;
         }
-        @media (max-width: 900px) {
-            .genre-area {
-                flex-direction: column;
-                gap: 40px;
-                align-items: center;
-            }
-        }
     </style>
 </head>
 <body>
@@ -120,5 +114,6 @@
     <form th:action="@{/albums}" method="get">
     <button class="back-btn" onclick="location.href='first.html'">戻る</button>
     </form>
+    <img src="/img/logo.png" alt="ロゴ" style="position: absolute; top: 20px; left: 20px; width: 100px; opacity: 0.5;">
 </body>
 </html>

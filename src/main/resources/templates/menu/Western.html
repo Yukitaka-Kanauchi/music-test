@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>洋食</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
     <style>
         body {
             background: #fdf0c8;
@@ -28,10 +29,18 @@
             padding: 6px 28px;
             cursor: pointer;
             transition: background 0.2s;
+            z-index: 2;
         }
         .back-btn:hover {
             background: #888;
         }
+        .omu-img {
+            position: absolute;
+            left: 200px;
+            bottom: 120px;
+            width: 200px;
+            z-index: 0;
+        }        
         .reload-btn {
             position: absolute;
             right: 40px;
@@ -44,6 +53,7 @@
             padding: 6px 28px;
             cursor: pointer;
             transition: background 0.2s;
+            z-index: 2;
         }
         .reload-btn:hover {
             background: #ffb300;
@@ -54,6 +64,8 @@
             overflow-x: auto;
             max-width: 100%;
             margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
         }
         table {
             width: 100%;
@@ -134,8 +146,7 @@
         </div>
     </div>
     <button class="reload-btn" onclick="location.reload()">もう１回</button>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg5nDb_mCwhuyWtSDadS6fFWmUKskJCha5EifBMoq68cjQDZ11qrrEbRvUApAUlslPxUMNSshjnXqQpSZz1SBgwWdBTD7-i4tCsU39fQukZDMjRHmB8V5UgTak5uhbV-RwF37CIRnRt9Ex/s400/food_omurice.png"
-    alt="オムライス"
-    style="position: fixed; left:200px; bottom: 120px; width: 200px; z-index: 10;">
+    <img class="omu-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg5nDb_mCwhuyWtSDadS6fFWmUKskJCha5EifBMoq68cjQDZ11qrrEbRvUApAUlslPxUMNSshjnXqQpSZz1SBgwWdBTD7-i4tCsU39fQukZDMjRHmB8V5UgTak5uhbV-RwF37CIRnRt9Ex/s400/food_omurice.png" alt="オムライス">
+    <img src="/img/logo.png" alt="ロゴ" style="position: absolute; top: 20px; left: 20px; width: 100px; opacity: 0.5;">
 </body>
 </html>

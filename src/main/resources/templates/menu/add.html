@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>食材追加</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
     <style>
         body {
             background: #fdf0c8;
@@ -55,6 +56,7 @@
             bottom: 105px;
             width: 100px;
             height: auto;
+            z-index: 0;
         }
         .table-area {
             display: flex;
@@ -63,6 +65,8 @@
             min-height: 50vh;
             margin-top: 30px;
             margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
         }
         table {
             border-collapse: collapse;
@@ -165,7 +169,7 @@
                             <input type="text" id="title" name="title" th:field="*{title}" class="input-cell" placeholder="例：トマト">
                         </td>
                         <td>
-                            <input type="text" id="artist" name="artist" th:field="*{artist}" class="input-cell" placeholder="例：1個">
+                            <input type="number" id="artist_int" name="artist_int" th:field="*{artist}" min="1" class="input-cell" placeholder="例: 1">
                         </td>
                         <td>
                             <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}" class="input-cell">
@@ -200,5 +204,6 @@
             }
         });
     </script>
+    <img src="/img/logo.png" alt="ロゴ" style="position: absolute; top: 20px; left: 20px; width: 100px; opacity: 0.5;">
 </body>
 </html>
