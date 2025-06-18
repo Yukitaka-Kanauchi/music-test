@@ -182,6 +182,40 @@
             </table>
         </div>
     </form>
+
+    <!--<form  th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" th:object="${albumForm}" method="post">
+        <div class="title">食材追加</div>
+        <div class="table-area">
+            <table>
+                <thead>
+                    <tr>
+                        <th>食材名</th>
+                        <th>分量</th>
+                        <th>消費期限</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="title" name="title" th:field="*{title}" class="input-cell" placeholder="例：トマト">
+                        </td>
+                        <td>
+                            <input type="number" id="artist_int" name="artist_int" th:field="*{artist}" min="1" class="input-cell" placeholder="例: 1">
+                        </td>
+                        <td>
+                            <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}" class="input-cell">
+                        </td>
+                        <td>
+                            <button class="add-btn" type="submit" style="position:static; right:auto; bottom:auto; font-size:1.1rem; padding:6px 18px;">決定</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>-->
+
+
     <form th:action="@{/albums/list}" method="get">
         <button class="back-btn">戻る</button>
     </form>

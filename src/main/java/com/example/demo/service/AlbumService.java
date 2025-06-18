@@ -38,7 +38,7 @@ public class AlbumService {
 
     public void updateAlbum(long albumId, Album album){
         if(albumId != album.getAlbumId()){
-            throw new IllegalArgumentException("Album ID does not match");
+            throw new IllegalArgumentException("does not match");
         }
         albumRepository.updateAlbum(album);
     }

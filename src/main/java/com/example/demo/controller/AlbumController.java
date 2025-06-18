@@ -76,26 +76,6 @@ public class AlbumController {
         return "menu/suggest";
     }
 
-    @GetMapping("/japanese_food")
-    public String japaneseFoodlist(Model model){
-        List<Album> japaneseFood = albumService.getAllAlbums();
-        model.addAttribute("albums", japaneseFood);
-        return "menu/japan";
-    }
-
-    @GetMapping("/chinese_food")
-    public String chineseFoodlist(Model model){
-        List<Album> chineseFood = albumService.getAllAlbums();
-        model.addAttribute("albums", chineseFood);
-        return "menu/china";
-    }
-
-    @GetMapping("/western_food")
-    public String westernFoodlist(Model model){
-        List<Album> westernFood = albumService.getAllAlbums();
-        model.addAttribute("albums", westernFood);
-        return "menu/Western";
-    }
 
     @GetMapping("/new")
     public String albumForm(Model model) {
@@ -117,14 +97,6 @@ public class AlbumController {
         return "redirect:/albums/list";
     }
 
-    /*
-    @PostMapping("/new")
-    public String createAlbum(AlbumForm albumForm, Model model) {
-        albumService.createAlbum(albumForm);
-        List<Album> albums = albumService.getAllAlbums();
-        model.addAttribute("albums", albums);
-        return "album/album-list";
-     */
     @PostMapping("/new")
     public String createAlbum(AlbumForm albumForm) {
         albumService.createAlbum(albumForm);
@@ -136,7 +108,6 @@ public class AlbumController {
         return "redirect:/albums/list";
     }
 
-    //aaa
     @GetMapping("/{albumId}")
     public String album(@PathVariable long albumId, Model model) {
         Album album = albumService.getAlbumById(albumId);
@@ -154,9 +125,13 @@ public class AlbumController {
 
     @GetMapping("/{albumId}/edit")
     public String editAlbum(@PathVariable long albumId, Model model) {
-        Album album = albumService.getAlbumById(albumId);
-        model.addAttribute("album", album);
-        return "album/album-edit";
+        //Album album = albumService.getAlbumById(albumId);
+        //model.addAttribute("album", album);
+
+        AlbumForm albumForm = new AlbumForm();
+        model.addAttribute("albumForm", albumForm);
+
+        return "menu/add";
     }
     @PostMapping("/{albumId}/edit")
     public String updateAlbum(@PathVariable long albumId, Album album) {
