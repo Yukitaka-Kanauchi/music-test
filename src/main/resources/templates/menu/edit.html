@@ -151,8 +151,8 @@
     </style>
 </head>
 <body>
-    <form th:action="@{/albums/add}" th:object="${albumForm}" method="post">
-        <div class="title">食材追加</div>
+    <form  th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" th:object="${album}" method="post">
+        <div class="title">食材編集</div>
         <div class="table-area">
             <table>
                 <thead>
@@ -169,7 +169,7 @@
                             <input type="text" id="title" name="title" th:field="*{title}" class="input-cell" placeholder="例：トマト">
                         </td>
                         <td>
-                            <input type="number" id="artist_int" name="artist_int" th:field="*{artist}" min="1" class="input-cell" placeholder="例: 1">
+                            <input type="number" id="artist_int" name="artist_int" th:field="*{artistInt}" min="1" class="input-cell" placeholder="例: 1">
                         </td>
                         <td>
                             <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}" class="input-cell">
