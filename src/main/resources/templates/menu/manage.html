@@ -168,9 +168,6 @@
                 min-width: 90vw;
             }
         }
-        .hidden {
-            display: none;
-        }
     </style>
 </head>
     <div class="title">食材管理</div>
@@ -184,8 +181,8 @@
                     <th>操作</th>
                 </tr>
             </thead>
-            <tbody id="itemList">
-                <tr th:each="album, iterStat : ${albums}" th:classappend="${iterStat.index >= 5} ? 'hidden'" >
+            <tbody>
+                <tr th:each="album: ${albums}">
                     <td><span th:text="${album.title}">album title</span></td>
                     <td><span th:text="${album.artistInt}">album artist</span></td>
                     <td><span th:text="${album.releaseDate}">album </span></td>
@@ -212,24 +209,5 @@
     </form>
     <img class="farmer-img" src="https://soco-st.com/wp-content/themes/socost/upload/15934_color.png" alt="農家">
     <img src="/img/logo.png" alt="ロゴ" style="position: absolute; top: 20px; left: 20px; width: 100px; opacity: 0.5;">
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const hiddenRows = document.querySelectorAll("#itemList tr.hidden");
-    const showMoreBtn = document.getElementById("showMoreBtn");
-    if (hiddenRows.length === 0) {
-        showMoreBtn.style.display = "none";
-    }
-    document.getElementById("showMoreBtn").addEventListener("click", function () {
-        const hiddenRows = document.querySelectorAll("#itemList tr.hidden");
-        const step = 5;
-        for (let i = 0; i < step && i < hiddenRows.length; i++) {
-            hiddenRows[i].classList.remove("hidden");
-        }
-        if (document.querySelectorAll("#itemList tr.hidden").length === 0) {
-            this.style.display = "none";
-        }
-    });
-    });
-    </script>
 </body>
 </html>
