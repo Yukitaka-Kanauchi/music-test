@@ -8,4 +8,5 @@ public class AlbumForm {
     private String title;
     private int artist;
     private LocalDate releaseDate;
+    private String unit;
 }

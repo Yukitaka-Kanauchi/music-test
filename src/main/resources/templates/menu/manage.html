@@ -30,8 +30,8 @@
         .table-area table {
             border-collapse: collapse;
             background: #fff;
-            min-width: 620px;
-            width: 620px;
+            min-width: 720px;
+            width: 720px;
             table-layout: fixed;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
@@ -76,7 +76,7 @@
         }
         .table-area th:nth-child(4),
         .table-area td:nth-child(4) { /* 操作 */
-            width: 100px;
+            width: 200px;
         }
         th {
             background: #ffb300; 
@@ -133,16 +133,34 @@
             z-index: 0;
         }
         .delete-btn-img {
-            filter: drop-shadow(0 0 0px #ffb300) brightness(1.0);
+            filter: drop-shadow(0 0 0px #ff3300) brightness(1.0);
             transition: transform 0.15s, filter 0.15s, box-shadow 0.15s;
             border-radius: 50%;
         }
         .delete-btn-img:hover {
             transform: scale(1.15);
-            filter: drop-shadow(0 0 12px #ffb300) brightness(1.4);
+            filter: drop-shadow(0 0 12px #ff0000) brightness(1.4);
             box-shadow: 0 0 16px 4px #ffb30080;
             background: #fffbe6;
             border: 1px solid #fffbe6;
+        }
+        .edit-btn-img {
+            margin-right: 8px;
+            vertical-align: middle;
+            filter: drop-shadow(0 0 0px #00fbff) brightness(1.0);
+            transition: transform 0.15s, filter 0.15s, box-shadow 0.15s;
+            border-radius: 50%;
+        }
+        .edit-btn-img:hover {
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 12px #00fbff) brightness(1.4);
+            box-shadow: 0 0 16px 4px #4caf5080;
+            background: #fffbe6;
+            border: 1px solid #fffbe6;
+        }
+        .edit-btn-img, .delete-btn-img {
+            vertical-align: middle;
+            border-radius: 50%;
         }
         @media (max-width: 900px) {
             .farmer-img {
@@ -184,17 +202,18 @@
             <tbody>
                 <tr th:each="album: ${albums}">
                     <td><span th:text="${album.title}">album title</span></td>
-                    <td><span th:text="${album.artistInt}">album artist</span></td>
+                    <td><span th:text="|${album.artistInt} ${album.unit}|"></span></td>
                     <td><span th:text="${album.releaseDate}">album </span></td>
                     <td>
-                        <form th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" method="get">
-                            <button type="submit">編集</button>
+                        <form th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" method="get" style="display:inline; margin:0; padding:0;">
+                            <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
+                                <img src="https://img.freepik.com/free-icon/edit_318-139126.jpg?size=338&ext=jpg" alt="編集" width="28" height="28" class="edit-btn-img">
+                            </button>
                         </form>
-                        <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post" style="margin:0;">
+                        <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post" style="display:inline; margin:0; padding:0;">
                             <button type="submit" onclick="return confirm('本当に削除しますか？');" style="background: none; border: none; padding: 0; cursor: pointer;">
                                 <img src="https://illust8.com/wp-content/uploads/2018/08/mark_batsu_illust_898.png" alt="削除" width="28" height="28" class="delete-btn-img">
                             </button>
-                            
                         </form>
                     </td>
                 </tr>

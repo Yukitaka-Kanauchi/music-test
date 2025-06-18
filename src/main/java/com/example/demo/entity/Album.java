@@ -14,4 +14,14 @@ public class Album {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;
     private LocalDateTime createdAt;
+    
+    private String unit;
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
 }

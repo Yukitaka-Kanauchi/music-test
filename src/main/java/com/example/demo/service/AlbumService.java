@@ -26,6 +26,8 @@ public class AlbumService {
         album.setArtistInt(albumForm.getArtist());
         album.setReleaseDate(albumForm.getReleaseDate());
         albumRepository.insertAlbum(album);
+        album.setUnit(albumForm.getUnit());
+        albumRepository.insertAlbum(album);
     }
 
     public Album getAlbumById(long albumId) {
@@ -53,6 +55,11 @@ public class AlbumService {
 
     public List<Album> getRandomChineseFood(){
         return albumRepository.getRandomChineseFood();
+    }
+
+    public void save(Album album) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'save'");
     }
 
 }
